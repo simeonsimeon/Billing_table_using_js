@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <section class="bill">
+        <h1>Structure of  Bill</h1>
+       
+        <table border="2px" width="700px" class="table">
+           <tr>
+            <th>S.NO</th>
+            <th>Product Nmae</th>
+            <th>Quantity</th>
+            <th>Unit Prices</th>
+            <th>Prices</th>
+
+           </tr>
+           <tr>
+            <td>1</td>
+            <td>Iphone</td>
+            <td id="select12">
+                 <select id="select" value="0" onchange="first()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+               </select> 
+               <!-- <input id="select" type="number"> -->
+            </td>
+            <td id="unit">50000</td>
+            <td id="price"></td>
+           </tr>
+
+           <tr>
+            <td>2</td>
+            <td>Samsung</td>
+            <td>
+                <select id="select1" value="0" onchange="second()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+               </select>
+            </td>
+            <td id="unit1">20000</td>
+            <td id="price1"></td>
+           </tr>
+           <tr>
+            <td>3</td>
+            <td>Oppo</td>
+            <td>
+                <select id="select2" value="0" onchange="third()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+               </select>
+            </td>
+            <td id="unit2">35000</td>
+            <td id="price2"></td>
+           </tr>
+           <tr>
+            <td>4</td>
+            <td>VIVO</td>
+            <td>
+                <select id="select3" value="0">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+               </select>
+            </td>
+            <td id="unit3">30000</td>
+            <td id="price3"></td>
+           </tr>
+           <tr>
+            <td>TOTAL</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="total"></td>
+           </tr>
+           <tr>
+            <td>TAX-18%</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="tax"></td>
+           </tr>
+           <tr>
+            <td>TOTAL-Price</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="grand"></td>
+           </tr>
+       
+    
+    
+        </table>
+    
+    </section>
+    <script>
+        let s;
+        let b;
+        let t;
+        let g;
+        let b1;
+        let b2;
+        b=0;
+        b1=0;
+        b2=0;
+      let select=document.getElementById("select");
+      let unit=document.getElementById("unit");
+      let total=document.getElementById("total");
+      let tax=document.getElementById("tax");
+      let grand=document.getElementById("grand");
+      let actt=document.getElementById("price");
+      act=0;
+
+
+      function first(){   
+        s=select.value;
+        console.log(s);
+        let unitinner=unit.innerText;
+        b=s*unitinner;
+        console.log(b);
+        actt.innerText=b;
+        cal(); 
+      }
+
+
+      let act1=document.getElementById("price1");
+      function second(){
+        
+        let s1;
+        
+        let t1;
+        let select1=document.getElementById("select1");
+      let unit1=document.getElementById("unit1");
+      
+        s1=select1.value;
+        console.log(s1);
+        let unitinner1=unit1.innerText;
+        b1=s1*unitinner1;
+        console.log(b1);
+        act1.innerText=b1;
+         cal();
+         }
+
+      let act2=document.getElementById("price2");
+      function third(){
+        let s2;
+        let t1;
+        let select2=document.getElementById("select2");
+      let unit2=document.getElementById("unit2");
+        s2=select2.value;
+        console.log(s2);
+        let unitinner2=unit2.innerText;
+        b2=s2*unitinner2;
+        console.log(b2);
+        act2.innerText=b2;
+         cal();
+         }
+  
+         function cal(){
+          let exp=parseInt(b+b1+b2);
+          console.log(exp);
+          total.innerHTML=exp;
+         t=((b+b1+b2)/100)*18;
+         tax.innerHTML=t;
+         g=exp+t;
+         grand.innerHTML=g;
+         }
+        
+      
+      
+
+      
+
+let easy=10;
+for(let i=0;i<easy;i++){
+    if(i%10==0){
+    console.log(i);
+}
+if(i%5){
+    console.log(i);
+}
+
+
+}
+
+
+
+    </script>
+    
+</body>
+</html>
